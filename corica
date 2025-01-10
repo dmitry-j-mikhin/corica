@@ -71,7 +71,7 @@ libs_real: $(for f in $libs_real; do echo -ne "\\n  - $f"; done)
 backtrace: |
 $(extract_backtrace "$core" | sed -e 's/^/  /')
 EOF
-    tar -cah -C$dir -f "$dest" "$core" $libs_ "$bin" description.yaml
+    eval tar -cah -C$dir -f "$dest" "$core" $libs_ "$bin" description.yaml
     rm -rf "$dir"
 }
 
